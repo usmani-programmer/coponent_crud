@@ -13,8 +13,8 @@
       <tr v-for="(item, index) in my_array">
         <td class="text-center">{{item.name}}</td>
         <td class="text-center">
-          <q-btn color="green" label="edit" />
-          <q-btn color="red" label="delete" class="q-ml-md" />
+          <q-btn color="green" label="edit" @click="$emit('edit',{record: item, index: index})" />
+          <q-btn color="red" label="delete" class="q-ml-md" @click="$emit('delete',index)" />
         </td>
       </tr>
       </tbody>
@@ -28,6 +28,7 @@
 export default {
   // name: 'ComponentName',
   props:['my_array'],
+  emits:['delete','edit'],
   data () {
     return {}
   }

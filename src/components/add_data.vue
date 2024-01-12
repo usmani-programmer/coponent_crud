@@ -12,7 +12,6 @@
         lazy-rules
         :rules="[ val => val && val.length > 0 || 'Please type something']"
       />
-      <q-toggle v-model="accept" label="I accept the license and terms" />
       <div>
         <q-btn label="Submit" type="submit" color="primary"/>
         <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
@@ -27,7 +26,6 @@
 <script>
 export default {
   name: 'add_data',
-  props:['test'],
   emits:['submit'],
   data () {
     return {
